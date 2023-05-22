@@ -1,0 +1,15 @@
+server:
+  port: 8014
+spring:
+  application:
+    name: shop-gateway
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8488
+    gateway:
+      routes: 
+        - id: shop-item
+        - uri: lb://shop-item
+        - predicates:
+            - Path=/user/**

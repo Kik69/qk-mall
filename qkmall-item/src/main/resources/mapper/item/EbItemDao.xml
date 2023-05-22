@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qkmall.item.pojo.dao.EbItemDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.qkmall.item.pojo.model.EbItemEntity" id="ebItemMap">
+        <result property="itemId" column="ITEM_ID"/>
+        <result property="itemName" column="ITEM_NAME"/>
+        <result property="itemNo" column="ITEM_NO"/>
+        <result property="brandId" column="BRAND_ID"/>
+        <result property="catId" column="CAT_ID"/>
+        <result property="tagImgId" column="TAG_IMG_ID"/>
+        <result property="tagImg" column="TAG_IMG"/>
+        <result property="isNew" column="IS_NEW"/>
+        <result property="isGood" column="IS_GOOD"/>
+        <result property="isHot" column="IS_HOT"/>
+        <result property="promotion" column="PROMOTION"/>
+        <result property="auditStatus" column="AUDIT_STATUS"/>
+        <result property="showStatus" column="SHOW_STATUS"/>
+        <result property="imgs" column="IMGS"/>
+        <result property="keywords" column="KEYWORDS"/>
+        <result property="pageDesc" column="PAGE_DESC"/>
+        <result property="itemRecycle" column="ITEM_RECYCLE"/>
+        <result property="onSaleTime" column="ON_SALE_TIME"/>
+        <result property="checkTime" column="CHECK_TIME"/>
+        <result property="updateTime" column="UPDATE_TIME"/>
+        <result property="updateUserId" column="UPDATE_USER_ID"/>
+        <result property="createTime" column="CREATE_TIME"/>
+        <result property="checkerUserId" column="CHECKER_USER_ID"/>
+        <result property="fullPathDeploy" column="FULL_PATH_DEPLOY"/>
+        <result property="fullPathDeployOffer" column="FULL_PATH_DEPLOY_OFFER"/>
+        <result property="originalItemId" column="ORIGINAL_ITEM_ID"/>
+        <result property="lastStatus" column="LAST_STATUS"/>
+        <result property="merchantId" column="MERCHANT_ID"/>
+        <result property="itemSort" column="ITEM_SORT"/>
+        <result property="sales" column="SALES"/>
+        <result property="createUserId" column="CREATE_USER_ID"/>
+        <result property="simLevel" column="SIM_LEVEL"/>
+        <result property="giftDesc" column="GIFT_DESC"/>
+        <result property="giftImg" column="GIFT_IMG"/>
+        <result property="giftShowType" column="GIFT_SHOW_TYPE"/>
+        <result property="imgSize1" column="IMG_SIZE1"/>
+    </resultMap>
+
+
+</mapper>

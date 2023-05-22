@@ -4,42 +4,50 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.codehd.shop</groupId>
-    <artifactId>code-shop</artifactId>
+    <groupId>com.qkmall</groupId>
+    <artifactId>qk-mall</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>shop-common</module>
-        <module>shop-gateway</module>
-        <module>shop-item</module>
-        <module>shop-order</module>
+        <module>qkmall-common</module>
+        <module>qkmall-gateway</module>
+        <module>qkmall-item</module>
+        <module>qkmall-order</module>
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>qkmall-generator</module>
     </modules>
 
     <parent>
-        <artifactId>spring-boot-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
-        <version>2.7.4</version>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
     </parent>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+        <spring-cloud-alibaba.version>2.2.6.RELEASE</spring-cloud-alibaba.version>
+    </properties>
     
     <dependencyManagement>
         <dependencies>
-
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2021.1</version>
+                <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
     <build>
         <plugins>
             <plugin>

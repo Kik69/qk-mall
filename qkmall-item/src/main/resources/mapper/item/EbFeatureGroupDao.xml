@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qkmall.item.pojo.dao.EbFeatureGroupDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.qkmall.item.pojo.model.EbFeatureGroupEntity" id="ebFeatureGroupMap">
+        <result property="groupId" column="GROUP_ID"/>
+        <result property="catId" column="CAT_ID"/>
+        <result property="groupName" column="GROUP_NAME"/>
+        <result property="groupDesc" column="GROUP_DESC"/>
+        <result property="groupSort" column="GROUP_SORT"/>
+    </resultMap>
+
+
+</mapper>

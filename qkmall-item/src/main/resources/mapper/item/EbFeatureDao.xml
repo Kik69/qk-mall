@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qkmall.item.pojo.dao.EbFeatureDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.qkmall.item.pojo.model.EbFeatureEntity" id="ebFeatureMap">
+        <result property="featureId" column="FEATURE_ID"/>
+        <result property="catId" column="CAT_ID"/>
+        <result property="featureName" column="FEATURE_NAME"/>
+        <result property="isSpec" column="IS_SPEC"/>
+        <result property="isSelect" column="IS_SELECT"/>
+        <result property="isShow" column="IS_SHOW"/>
+        <result property="selectValues" column="SELECT_VALUES"/>
+        <result property="inputType" column="INPUT_TYPE"/>
+        <result property="featureSort" column="FEATURE_SORT"/>
+    </resultMap>
+
+
+</mapper>

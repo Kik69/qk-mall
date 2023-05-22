@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qkmall.item.pojo.dao.EbSkuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.qkmall.item.pojo.model.EbSkuEntity" id="ebSkuMap">
+        <result property="skuId" column="SKU_ID"/>
+        <result property="itemId" column="ITEM_ID"/>
+        <result property="sku" column="SKU"/>
+        <result property="skuPrice" column="SKU_PRICE"/>
+        <result property="showStatus" column="SHOW_STATUS"/>
+        <result property="stockInventory" column="STOCK_INVENTORY"/>
+        <result property="skuUpperLimit" column="SKU_UPPER_LIMIT"/>
+        <result property="location" column="LOCATION"/>
+        <result property="skuImg" column="SKU_IMG"/>
+        <result property="skuSort" column="SKU_SORT"/>
+        <result property="skuName" column="SKU_NAME"/>
+        <result property="marketPrice" column="MARKET_PRICE"/>
+        <result property="createTime" column="CREATE_TIME"/>
+        <result property="updateTime" column="UPDATE_TIME"/>
+        <result property="createUserId" column="CREATE_USER_ID"/>
+        <result property="updateUserId" column="UPDATE_USER_ID"/>
+        <result property="originalSkuId" column="ORIGINAL_SKU_ID"/>
+        <result property="lastStatus" column="LAST_STATUS"/>
+        <result property="merchantId" column="MERCHANT_ID"/>
+        <result property="skuType" column="SKU_TYPE"/>
+        <result property="sales" column="SALES"/>
+        <result property="resCode" column="RES_CODE"/>
+        <result property="packId" column="PACK_ID"/>
+    </resultMap>
+
+
+</mapper>

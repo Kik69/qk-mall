@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.qkmall.item.pojo.dao.EbCatDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.qkmall.item.pojo.model.EbCatEntity" id="ebCatMap">
+        <result property="catId" column="CAT_ID"/>
+        <result property="catName" column="CAT_NAME"/>
+        <result property="catDesc" column="CAT_DESC"/>
+        <result property="parentId" column="PARENT_ID"/>
+        <result property="catSort" column="CAT_SORT"/>
+        <result property="keywords" column="KEYWORDS"/>
+        <result property="path" column="PATH"/>
+        <result property="mark" column="MARK"/>
+        <result property="isdisplay" column="ISDISPLAY"/>
+        <result property="fullPath" column="FULL_PATH"/>
+        <result property="catType" column="CAT_TYPE"/>
+    </resultMap>
+
+
+</mapper>
