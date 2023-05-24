@@ -2,7 +2,7 @@ server:
   port: 8012
 spring:
   application:
-    name: shop-item
+    name: qkmall-item
   redis:
     host: localhost
     port: 6379
