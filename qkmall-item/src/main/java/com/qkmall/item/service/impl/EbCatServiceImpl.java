@@ -3,7 +3,12 @@ package com.qkmall.item.service.impl;
 import com.qkmall.common.utils.PageUtils;
 import com.qkmall.common.utils.Query;
 import org.springframework.stereotype.Service;
+
+import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -23,6 +28,29 @@ public class EbCatServiceImpl extends ServiceImpl<EbCatDao, EbCatEntity> impleme
         );
 
         return new PageUtils(page);
+    }
+
+    @Override
+    public List<EbCatEntity> listCatTree() {
+        List<EbCatEntity> cats = baseMapper.selectList(null);
+        return cats.stream()
+                .filter(cat -> cat.getParentId().intValue() == 0)
+                .map(cat -> {
+                    cat.setChildren(this.getChildren(cat,cats));
+                    return cat;
+                })
+                .sorted(Comparator.comparingInt(menu -> (menu.getCatSort() == null ? 0 : menu.getCatSort().intValue())))
+                .collect(Collectors.toList());
+    }
+    
+    public List<EbCatEntity> getChildren(EbCatEntity pCat,List<EbCatEntity> allCats){
+        return allCats.stream()
+                .filter(cat-> pCat.getCatId().equals(cat.getParentId()))
+                .map(cat->{
+                    cat.setChildren(this.getChildren(cat,allCats));
+                    return cat;
+                })
+                .collect(Collectors.toList());
     }
 
 }

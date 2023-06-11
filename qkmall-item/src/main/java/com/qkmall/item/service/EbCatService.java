@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.qkmall.common.utils.PageUtils;
 import com.qkmall.item.pojo.model.EbCatEntity;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,5 +18,7 @@ import java.util.Map;
 public interface EbCatService extends IService<EbCatEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+    
+    List<EbCatEntity> listCatTree();
 }
 

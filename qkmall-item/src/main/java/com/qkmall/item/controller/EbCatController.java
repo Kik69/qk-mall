@@ -1,8 +1,10 @@
 package com.qkmall.item.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import com.qkmall.common.CommonResult;
 import com.qkmall.item.pojo.model.EbCatEntity;
 import com.qkmall.item.service.EbCatService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,6 +83,12 @@ public class EbCatController {
 		ebCatService.removeByIds(Arrays.asList(catIds));
 
         return R.ok();
+    }
+    
+    @RequestMapping("listTree")
+    public CommonResult<List<EbCatEntity>> listTree(){
+        List<EbCatEntity> ebCatEntities = ebCatService.listCatTree();
+        return CommonResult.success(ebCatEntities);
     }
 
 }

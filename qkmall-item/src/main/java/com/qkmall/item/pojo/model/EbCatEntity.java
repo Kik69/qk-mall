@@ -1,11 +1,14 @@
 package com.qkmall.item.pojo.model;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.math.BigDecimal;
 import java.io.Serializable;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 /**
@@ -66,5 +69,8 @@ public class EbCatEntity implements Serializable {
 	 * 0、不分类；1、实体；2、号卡；3、虚拟商品
 	 */
 	private BigDecimal catType;
-
+	
+	@JsonInclude(JsonInclude.Include.NON_EMPTY)
+	@TableField(exist = false)
+	private List<EbCatEntity> children;
 }
