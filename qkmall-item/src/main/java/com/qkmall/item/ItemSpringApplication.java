@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @SpringBootApplication
 @EnableFeignClients
-@RestController
 public class ItemSpringApplication {
     public static void main(String[] args) {
         SpringApplication.run(ItemSpringApplication.class,args);

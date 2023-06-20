@@ -50,6 +50,7 @@ public class EbCatServiceImpl extends ServiceImpl<EbCatDao, EbCatEntity> impleme
                     cat.setChildren(this.getChildren(cat,allCats));
                     return cat;
                 })
+                .sorted(Comparator.comparingInt(menu -> (menu.getCatSort() == null ? 0 : menu.getCatSort().intValue())))
                 .collect(Collectors.toList());
     }
 
