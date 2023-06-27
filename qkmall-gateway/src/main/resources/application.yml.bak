@@ -2,14 +2,14 @@ server:
   port: 8014
 spring:
   application:
-    name: shop-gateway
+    name: qkmall-gateway
   cloud:
     nacos:
       config:
         server-addr: localhost:8488
     gateway:
       routes: 
-        - id: shop-item
-        - uri: lb://shop-item
-        - predicates:
-            - Path=/user/**
+        - id: qkmall-item
+          uri: lb://qkmall-item
+          predicates:
+            - Path=/item/**

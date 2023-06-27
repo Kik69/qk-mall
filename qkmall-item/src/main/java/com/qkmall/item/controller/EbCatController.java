@@ -79,10 +79,9 @@ public class EbCatController {
      * 删除
      */
     @RequestMapping("/delete")
-    public R delete(@RequestBody Integer[] catIds){
+    public CommonResult delete(@RequestBody Integer[] catIds){
 		ebCatService.removeByIds(Arrays.asList(catIds));
-
-        return R.ok();
+        return CommonResult.success();
     }
     
     @RequestMapping("listTree")
