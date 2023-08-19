@@ -48,10 +48,9 @@ public class EbCatController {
      * 信息
      */
     @RequestMapping("/info/{catId}")
-    public R info(@PathVariable("catId") Integer catId){
-		EbCatEntity ebCat = ebCatService.getById(catId);
-
-        return R.ok().put("ebCat", ebCat);
+    public CommonResult<EbCatEntity> info(@PathVariable("catId") Integer catId){
+        EbCatEntity ebCat = ebCatService.getById(catId);
+        return CommonResult.success(ebCat);
     }
 
     /**
@@ -59,20 +58,17 @@ public class EbCatController {
      */
     @RequestMapping("/save")
     
-    public R save(@RequestBody EbCatEntity ebCat){
-		ebCatService.save(ebCat);
-
-        return R.ok();
+    public CommonResult save(@RequestBody EbCatEntity ebCat){
+        return CommonResult.success(ebCatService.save(ebCat));
     }
 
     /**
      * 修改
      */
     @RequestMapping("/update")
-    public R update(@RequestBody EbCatEntity ebCat){
-		ebCatService.updateById(ebCat);
-
-        return R.ok();
+    public CommonResult update(@RequestBody EbCatEntity ebCat){
+        System.out.println(ebCat.toString());
+        return CommonResult.success(ebCatService.updateById(ebCat));
     }
 
     /**
@@ -80,7 +76,7 @@ public class EbCatController {
      */
     @RequestMapping("/delete")
     public CommonResult delete(@RequestBody Integer[] catIds){
-		ebCatService.removeByIds(Arrays.asList(catIds));
+        ebCatService.removeByIds(Arrays.asList(catIds));
         return CommonResult.success();
     }
     
