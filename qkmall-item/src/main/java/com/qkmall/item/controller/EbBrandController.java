@@ -23,7 +23,7 @@ import com.qkmall.item.pojo.model.EbBrandEntity;
  * @date 2023-04-24 19:25:30
  */
 @RestController
-@RequestMapping("item/ebBrand")
+@RequestMapping("item/ebbrand")
 public class EbBrandController {
     @Autowired
     private EbBrandService ebBrandService;
